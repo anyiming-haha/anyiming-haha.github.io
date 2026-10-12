@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人主页</title>
+    <title>安奕铭 - 个人主页</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: "Microsoft Yahei", sans-serif;
+            scroll-behavior: smooth; /* 平滑滚动 */
         }
         body {
             background-color: #121826;
             color: #e9e9e9;
-            line-height: 1.6;
+            line-height: 1.7;
         }
         .container {
             max-width: 900px;
@@ -55,7 +56,13 @@
             color: #cbd5e1;
         }
         li {
-            margin: 8px 0;
+            margin: 14px 0; /* 加大行距，长项目文字不挤 */
+            padding: 8px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        li:hover{
+            background-color:#334155;
         }
         .contact a {
             color: #60a5fa;

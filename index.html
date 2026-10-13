@@ -20,7 +20,6 @@
             position: relative;
             z-index: 0;
         }
-        /* 背景画布：星空 + 数字雨 */
         #bgCanvas{
             position: fixed;
             top:0;
@@ -29,7 +28,6 @@
             height:100vh;
             z-index:-1;
         }
-        /* 导航栏 */
         nav {
             background-color: rgba(11,17,27,0.7);
             border-bottom: 1px solid #39d35350;
@@ -216,6 +214,7 @@
         <p>邮箱：3938604375@qq.com</p>
         <p>GitHub：<a href="https://github.com/anyiming-haha" target="_blank">github.com/anyiming-haha</a></p>
         <p>个人主页：<a href="https://anyiming-haha.github.io" target="_blank">https://anyiming-haha.github.io</a></p>
+      
     </section>
 
     <footer>
@@ -239,7 +238,6 @@ const colorList = [
     "255, 135, 175"
 ];
 
-// 重置画布【修复关键点：设置canvas原生宽高】
 function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -247,7 +245,6 @@ function resizeCanvas() {
     createMatrix();
 }
 
-// 创建彩色闪烁星空
 function createStars() {
     stars = [];
     for (let i = 0; i < 700; i++) {
@@ -263,7 +260,6 @@ function createStars() {
     }
 }
 
-// 创建二进制01数字雨
 function createMatrix() {
     drops = [];
     const fontSize = 16;
@@ -273,13 +269,10 @@ function createMatrix() {
     }
 }
 
-// 绘制全部背景
 function draw() {
-    // 半透明拖尾，实现数字雨残影效果
     ctx.fillStyle = "rgba(7, 11, 19, 0.06)";
     ctx.fillRect(0,0,canvas.width,canvas.height);
 
-    // ========= 绘制彩色星空粒子 =========
     for (let s of stars) {
         s.phase += s.twinkleSpeed;
         let alpha = 0.35 + Math.sin(s.phase) * 0.35;
@@ -294,7 +287,6 @@ function draw() {
         }
     }
 
-    // ========= 绘制二进制 0 1 数字雨 =========
     const fontSize = 16;
     ctx.font = fontSize + "px Consolas";
     ctx.fillStyle = "#39d353";
@@ -309,8 +301,7 @@ function draw() {
 
     requestAnimationFrame(draw);
 }
-
-// 页面加载完成后再初始化，防止js提前执行
+    
 window.addEventListener('load',()=>{
     resizeCanvas();
     draw();

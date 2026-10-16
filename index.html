@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -53,7 +52,7 @@
         .loader.hide{
             opacity:0;
             pointer-events:none;
-            transition:opacity 0.8s;
+            transition:opacity 0.6s;
         }
 
         #bgCanvas {
@@ -68,7 +67,7 @@
             position: fixed;
             inset: 0;
             z-index: -1;
-            background-image:
+            background-image: 
                 linear-gradient(rgba(57, 211, 83, 0.02) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(57, 211, 83, 0.02) 1px, transparent 1px);
             background-size: 40px 40px;
@@ -93,11 +92,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(180deg,
-                transparent 0%,
-                rgba(57, 211, 83, 0.08) 45%,
-                rgba(88, 166, 255, 0.15) 50%,
-                rgba(57, 211, 83, 0.08) 55%,
+            background: linear-gradient(180deg, 
+                transparent 0%, 
+                rgba(57, 211, 83, 0.08) 45%, 
+                rgba(88, 166, 255, 0.15) 50%, 
+                rgba(57, 211, 83, 0.08) 55%, 
                 transparent 100%);
             animation: scanCover 6s linear infinite;
             pointer-events: none;
@@ -129,75 +128,6 @@
             min-height:24px;
             margin-bottom:8px;
         }
-        .tip-text {
-            color: #ff4d4f;
-            height: 24px;
-            line-height: 24px;
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-            letter-spacing: 1px;
-        }
-        .hint-text {
-            color: #ffc107;
-            height: 24px;
-            line-height: 24px;
-            margin-bottom: 10px;
-            font-size: 0.95rem;
-            letter-spacing: 1px;
-        }
-        .input-area {
-            margin-bottom: 12px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-        }
-        #keyInput {
-            background: #0b1320;
-            border: 1px solid #39d353;
-            color: #39d353;
-            padding: 12px 16px;
-            font-size: 1rem;
-            width: 300px;
-            outline: none;
-            border-radius: 4px;
-            transition: box-shadow 0.3s;
-        }
-        #keyInput:focus {
-            box-shadow: 0 0 15px rgba(57, 211, 83, 0.4);
-        }
-        #keyInput::placeholder {
-            color: #39d35377;
-        }
-        #submitBtn {
-            padding: 12px 22px;
-            background: #14233b;
-            border: 1px solid #58a6ff;
-            color: #58a6ff;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: 0.3s;
-        }
-        #submitBtn:hover {
-            background: #58a6ff;
-            color: #070b13;
-            box-shadow: 0 0 15px #58a6ff;
-        }
-        #hintBtn {
-            padding: 12px 22px;
-            background: #121826;
-            border: 1px solid #ffc107;
-            color: #ffc107;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: 0.3s;
-        }
-        #hintBtn:hover {
-            background: #ffc107;
-            color: #070b13;
-            box-shadow: 0 0 15px #ffc107;
-        }
         .typing-text {
             color: #39d353;
             font-size: 1.2rem;
@@ -215,57 +145,9 @@
             0%, 100% { border-color: #39d353; }
             50% { border-color: transparent; }
         }
-        .enter-btn {
-            font-size: 1.2rem;
-            padding: 14px 48px;
-            border: 1px solid #58a6ff;
-            background: transparent;
-            color: #58a6ff;
-            cursor: pointer;
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            letter-spacing: 2px;
-            position: relative;
-            overflow: hidden;
-            border-radius: 4px;
-            box-shadow: 0 0 10px rgba(88, 166, 255, 0.2);
-            opacity: 0;
-            pointer-events: none;
-            transform: scale(0.95);
-        }
-        .enter-btn.show {
-            opacity: 1;
-            pointer-events: auto;
-            transform: scale(1);
-        }
-        .enter-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(57, 211, 83, 0.2), transparent);
-            transition: left 0.5s;
-        }
-        .enter-btn:hover::before {
-            left: 100%;
-        }
-        .enter-btn:hover {
-            background: #58a6ff;
-            color: #070b13;
-            box-shadow: 0 0 25px #58a6ff;
-            transform: scale(1.05);
-        }
         .cover-page.fade-out {
             opacity:0;
             pointer-events:none;
-        }
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            20% { transform: translateX(-8px); }
-            40% { transform: translateX(8px); }
-            60% { transform: translateX(-5px); }
-            80% { transform: translateX(5px); }
         }
 
         nav {
@@ -468,7 +350,6 @@
         }
         @media (max-width: 600px) {
             .cover-title { font-size: 2rem; }
-            #keyInput { width: 200px; }
             h1 { font-size: 2rem; }
             .typing-text { font-size: 1rem;}
             .nav-links a { margin-left:12px; font-size:0.9rem; }
@@ -493,16 +374,8 @@
     <div class="cover-page" id="cover">
         <div class="cover-box">
             <div class="cover-title">WELCOME</div>
-            <div class="log-text" id="logText">[SYSTEM] Waiting for authentication...</div>
-            <div class="hint-text" id="hintText"></div>
-            <div class="tip-text" id="tipText"></div>
-            <div class="input-area">
-                <input id="keyInput" placeholder="请输入访问密钥" autocomplete="off" />
-                <button id="submitBtn">确认</button>
-                <button id="hintBtn">提示密钥</button>
-            </div>
+            <div class="log-text" id="logText">[SYSTEM] Ready</div>
             <div class="typing-text" id="typingText"></div>
-            <button class="enter-btn" id="enterBtn">ENTER</button>
         </div>
     </div>
 
@@ -510,11 +383,12 @@
         <div class="nav-container">
             <div class="nav-logo">安奕铭 | CyberSec</div>
             <div class="nav-links">
-                <a href="#about" class="nav-link">关于我</a>
-                <a href="#skills" class="nav-link">技能栈</a>
-                <a href="#projects" class="nav-link">项目经历</a>
-                <a href="#hobby" class="nav-link">兴趣爱好</a>
-                <a href="#contact" class="nav-link">联系方式</a>
+                <a href="#about" class="nav-link">简介</a>
+                <a href="#hobby" class="nav-link">爱好</a>
+                <a href="#skills" class="nav-link">技能</a>
+                <a href="#projects" class="nav-link">项目</a>
+                <a href="#cert" class="nav-link">证书</a>
+                <a href="#contact" class="nav-link">联系</a>
             </div>
         </div>
     </nav>
@@ -522,60 +396,62 @@
     <div class="container">
         <header>
             <h1>安奕铭</h1>
-            <div class="subtitle">Computer Student｜Cyber Security Learner</div>
+            <div class="subtitle">网络安全学习者 | 计算机科学</div>
             <div class="tag-line">选择性懒癌患者</div>
         </header>
 
         <section id="about">
-            <h2>👤 关于我</h2>
-            <p>我是沈阳理工大学计算机科学与技术（中俄合作方向）大一学生，主攻信息安全方向。现阶段夯实C语言基础，学习前端、Git等开发工具，利用AI辅助提升编码效率。持续积累计算机底层与网络安全相关知识。注重理论结合实践，习惯动手完成小项目，锻炼问题排查与工程实现能力，希望通过持续学习，在信息安全领域深耕。</p>
-        </section>
-
-        <section id="skills">
-            <h2>⚙️ 技能栈</h2>
-            <div class="skill-tags">
-                <span class="skill-tag">C语言基础</span>
-                <span class="skill-tag">Git & GitHub</span>
-                <span class="skill-tag">HTML/CSS前端</span>
-                <span class="skill-tag">AI辅助开发</span>
-                <span class="skill-tag">计算机网络基础</span>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2>📁 项目经历</h2>
-            <ul>
-                <li>
-                    <strong>个人静态网站（通识课程作业）</strong><span class="project-tag">HTML/CSS/JS</span>
-                    <br>借助AI Agent完成单页HTML+CSS个人主页开发，自主修改页面内容、调试样式；使用Git管理代码，上传GitHub仓库，通过GitHub Pages完成公网部署，学习前端基础、版本控制与网站发布流程。
-                </li>
-                <li>
-                    <strong>C语言算法练习项目</strong><span class="project-tag">C语言</span>
-                    <br>课内自学实践，练习基础算法、数组、结构体等知识点，持续刷题，备锻炼代码逻辑与问题调试能力。
-                </li>
-                <li>
-                    <strong>安全基础学习实践</strong><span class="project-tag">网络安全</span>
-                    <br>自学计算机网络基础，搭建简易实验环境，学习网络安全基础概念，备考NISP二级证书，为后续信息安全方向学习做铺垫。
-                </li>
-            </ul>
+            <h2>👤 个人简介</h2>
+            <p>大一计算机专业新生，未来方向为网络安全，热爱底层原理与程序开发。正在学习Socket网络编程、TCP/IP协议，持续夯实计算机基础知识。</p>
         </section>
 
         <section id="hobby">
             <h2>🎮 兴趣爱好</h2>
+            <p>羽毛球会一点点，勉强能接住球；篮球也会一点点，投篮全看缘分。游戏偏爱赛车竞速类，享受贴线超车的快感，不过现实里一定老老实实遵守交通规则！</p>
+        </section>
+
+        <section id="skills">
+            <h2>⚙️ 技能 Skills</h2>
+            <p>正在学习的计算机与网络安全相关技术：</p>
+            <div class="skill-tags">
+                <span class="skill-tag">C语言</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">HTML/CSS/JS</span>
+                <span class="skill-tag">Git & GitHub</span>
+                <span class="skill-tag">TCP/IP</span>
+                <span class="skill-tag">Linux基础</span>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>📁 项目经历 Projects</h2>
             <ul>
-                <li>网络安全技术学习，CTF入门</li>
-                <li>编程刷题，钻研底层原理</li>
-                <li>数码硬件与笔记本性能调试</li>
-                <li>外语学习（俄语、英语）</li>
+                <li><strong>个人网络安全主题主页</strong><span class="project-tag">HTML/CSS/JS</span>
+                    <br>带有加载动画、星空背景、交互动画，部署在GitHub Pages。
+                </li>
+                <li><strong>C语言TCP Socket简易通信程序</strong><span class="project-tag">C语言</span>
+                    <br>学习网络编程，实现简单客户端与服务器消息收发。
+                </li>
+                <li><strong>Python猜数字小游戏</strong><span class="project-tag">Python</span>
+                    <br>控制台交互式小游戏，练习基础语法与逻辑判断。
+                </li>
+            </ul>
+        </section>
+
+        <section id="cert">
+            <h2>📜 证书与学习目标</h2>
+            <ul>
+                <li>备考：NISP二级网络安全证书</li>
+                <li>赛事目标：蓝桥杯计算机竞赛</li>
+                <li>长期方向：Web安全、系统安全</li>
             </ul>
         </section>
 
         <section id="contact">
-            <h2>📬 联系方式</h2>
+            <h2>📬 联系方式 Contact</h2>
             <p>📞 电话：18709316256</p>
-            <p>📧 邮箱：<a href="mailto:3938604375@qq.com">3938604375@qq.com</a></p>
-            <p>GitHub：<a href="https://github.com/anyiming-haha" target="_blank">https://github.com/anyiming‑haha</a></p>
-            <p>个人主页：<a href="https://anyiming-haha.github.io" target="_blank">https://anyiming-haha.github.io</a></p>
+            <p>📧 邮箱：3938604375@qq.com</p>
+            <p>GitHub：github.com/anyiming-haha</p>
         </section>
 
         <footer>
@@ -593,14 +469,14 @@
             const loader = document.querySelector('.loader');
             let progress = 0;
             const loadTimer = setInterval(()=>{
-                progress += Math.random()*4;
+                progress += Math.random()*8;
                 if(progress >=100){
                     progress = 100;
                     clearInterval(loadTimer);
-                    setTimeout(()=>loader.classList.add('hide'),400);
+                    setTimeout(()=>loader.classList.add('hide'),200);
                 }
                 loadBar.style.width = progress + '%';
-            },80);
+            },30);
 
             const canvas = document.getElementById("bgCanvas");
             const ctx = canvas.getContext("2d");
@@ -702,44 +578,10 @@
             drawBg();
 
             const cover = document.getElementById('cover');
-            const enterBtn = document.getElementById('enterBtn');
-            const submitBtn = document.getElementById("submitBtn");
-            const hintBtn = document.getElementById("hintBtn");
-            const keyInput = document.getElementById("keyInput");
             const typingText = document.getElementById("typingText");
-            const tipText = document.getElementById("tipText");
-            const hintText = document.getElementById("hintText");
-            const logText = document.getElementById("logText");
             const targetStr = "安奕铭 | 计算机学者";
-            const password = "sysadmin";
 
-            hintBtn.addEventListener('click', () => {
-                hintText.textContent = "提示：密钥为系统管理员英文单词（8位小写）";
-                setTimeout(() => {
-                    if (hintText.textContent.includes("提示")) hintText.textContent = "";
-                }, 3500);
-            });
-
-            submitBtn.addEventListener('click', () => {
-                const inputVal = keyInput.value.trim();
-                tipText.textContent = "";
-                logText.textContent = "[INFO] 正在验证密钥...";
-                if (!inputVal) {
-                    logText.textContent = "[WARNING] 输入内容为空";
-                    tipText.textContent = "⚠ 请输入密钥";
-                    return;
-                }
-                if (inputVal !== password) {
-                    logText.textContent = "[ERROR] Access Denied";
-                    tipText.textContent = "✗ 密钥错误，请重试";
-                    keyInput.value = "";
-                    keyInput.focus();
-                    keyInput.style.animation = 'shake 0.4s';
-                    setTimeout(() => keyInput.style.animation = '', 400);
-                    return;
-                }
-                logText.textContent = "[SUCCESS] Authentication passed";
-                tipText.textContent = "✓ 身份验证成功";
+            setTimeout(()=>{
                 let index = 0;
                 typingText.textContent = "";
                 typingText.classList.add('typing');
@@ -747,24 +589,17 @@
                     if (index < targetStr.length) {
                         typingText.textContent += targetStr.charAt(index);
                         index++;
-                        setTimeout(typeWriter, 130);
+                        setTimeout(typeWriter,120);
                     } else {
                         typingText.classList.remove('typing');
-                        setTimeout(() => {
-                            enterBtn.classList.add("show");
-                            enterBtn.focus();
-                        }, 500);
+                        setTimeout(()=>{
+                            cover.classList.add('fade-out');
+                            setTimeout(()=>cover.style.display="none",1000);
+                        },600);
                     }
                 }
                 typeWriter();
-            });
-            keyInput.addEventListener("keydown", e => {
-                if (e.key === "Enter") submitBtn.click();
-            });
-            enterBtn.addEventListener('click', () => {
-                cover.classList.add('fade-out');
-                setTimeout(()=>cover.style.display="none",1000);
-            });
+            },800)
 
             const sections = document.querySelectorAll("section");
             const navLinks = document.querySelectorAll('.nav-link');
@@ -865,6 +700,3 @@
 </body>
 </html>
 
-
-
-            
